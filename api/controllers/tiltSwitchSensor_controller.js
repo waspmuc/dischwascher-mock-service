@@ -36,6 +36,10 @@ module.exports = {
  */
 function returnTiltSwitchSensorEntry(req, res) {
 
-    var fakeResponse =  'true';
-    res.json(fakeResponse);
+    res.writeHead(200, {"Content-Type": "application/json"});
+    var json = JSON.stringify({
+        currentState: false,
+        lastChanged: "0"
+    });
+    res.end(json);
 }

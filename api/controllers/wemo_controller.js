@@ -36,6 +36,9 @@ module.exports = {
  */
 function returnWemoEntry(req, res) {
 
-    var fakeResponse =  '{ "wemodishwasher" : { "currentpower": 500} }';
-    res.json(fakeResponse);
+    res.writeHead(200, {"Content-Type": "application/json"});
+    var json = JSON.stringify({
+        currentpower: 1800
+    });
+    res.end(json);
 }
